@@ -1,4 +1,4 @@
-" The "Vim Rubocop" plugin runs Rubocop and displays the results in Vim.
+" The "Vim RuboCop" plugin runs RuboCop and displays the results in Vim.
 "
 " Author:  ngmy
 " URL:     https://github.com/ngmy/vim-rubocop
@@ -13,12 +13,12 @@ let g:loaded_vimrubocop = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
-" Test for Rubocop
+" Test for RuboCop
 if !exists('vimrubocop_rubocop_cmd')
   if executable('rubocop')
     let vimrubocop_rubocop_cmd='rubocop '
   else
-    " Unable to find the Rubocop executable
+    " Unable to find the RuboCop executable
     echomsg 'Unable to find rubocop in the current PATH.'
     echomsg 'Plugin not loaded.'
     let &cpo = s:save_cpo
@@ -35,7 +35,7 @@ if !exists('vimrubocop_extra_args')
   let vimrubocop_extra_args=''
 endif
 
-function! s:Rubocop()
+function! s:RuboCop()
   let l:extra_args     = g:vimrubocop_extra_args
   let l:filename       = @%
   let l:rubocop_cmd    = g:vimrubocop_rubocop_cmd
@@ -50,4 +50,4 @@ function! s:Rubocop()
   copen
 endfunction
 
-command! Rubocop :call <SID>Rubocop()
+command! RuboCop :call <SID>RuboCop()
