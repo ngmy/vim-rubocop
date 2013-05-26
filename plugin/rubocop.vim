@@ -5,6 +5,10 @@
 " Version: 0.1
 " ----------------------------------------------------------------------------
 
+" Shortcuts for RuboCop
+nmap <Leader>ru :RuboCop<CR>
+imap <Leader>ru <ESC>:RuboCop<CR>
+
 if exists('g:loaded_vimrubocop') || &cp
   finish
 endif
