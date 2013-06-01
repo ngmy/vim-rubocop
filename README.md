@@ -17,7 +17,7 @@ The **Vim RuboCop** plugin runs [RuboCop](https://github.com/bbatsov/rubocop) an
     ```
 
 ### Keyboard Shortcuts ###
-  Credit for Shortcuts: [ Ack.vim ]( git://github.com/mileszs/ack.vim.git )
+  Credit for Shortcuts: [Ack.vim](https://github.com/mileszs/ack.vim)
 
 In the quickfix window, you can use:
 
