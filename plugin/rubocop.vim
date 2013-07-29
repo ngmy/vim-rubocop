@@ -43,7 +43,7 @@ function! s:RuboCop()
   let l:extra_args     = g:vimrubocop_extra_args
   let l:filename       = @%
   let l:rubocop_cmd    = g:vimrubocop_rubocop_cmd
-  let l:rubocop_opts   = ' '.l:extra_args.' --emacs --silent'
+  let l:rubocop_opts   = ' '.l:extra_args.' --format emacs --silent'
   if g:vimrubocop_config != ''
     let l:rubocop_opts = ' '.l:rubocop_opts.' --config '.g:vimrubocop_config
   endif
