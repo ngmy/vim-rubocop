@@ -2,6 +2,10 @@
 
 The **Vim RuboCop** plugin runs [RuboCop](https://github.com/bbatsov/rubocop) and displays the results in Vim.
 
+## Requirements
+
+- Please note that the current version of the Vim RuboCop plugin requires RuboCop 0.9.0 or later.
+
 ## Installation
 
 - Obtain a copy of this plugin and place `rubocop.vim` in your Vim plugin.

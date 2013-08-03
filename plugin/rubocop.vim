@@ -2,7 +2,7 @@
 "
 " Author:  ngmy
 " URL:     https://github.com/ngmy/vim-rubocop
-" Version: 0.1
+" Version: 0.2
 " ----------------------------------------------------------------------------
 
 " Shortcuts for RuboCop
