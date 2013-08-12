@@ -5,10 +5,6 @@
 " Version: 0.2
 " ----------------------------------------------------------------------------
 
-" Shortcuts for RuboCop
-nmap <Leader>ru :RuboCop<CR>
-imap <Leader>ru <ESC>:RuboCop<CR>
-
 if exists('g:loaded_vimrubocop') || &cp
   finish
 endif
@@ -65,3 +61,9 @@ function! s:RuboCop()
 endfunction
 
 command! RuboCop :call <SID>RuboCop()
+
+" Shortcuts for RuboCop
+if !exists("g:rubocop_no_mappings")
+  nmap <Leader>ru :RuboCop<CR>
+  imap <Leader>ru <ESC>:RuboCop<CR>
+endif
