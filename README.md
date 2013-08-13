@@ -35,14 +35,14 @@ In the quickfix window, you can use:
     gv   to open in vertical split silently
     q    to close the quickfix window
 
-Additionally, the plugin registers `<leader>ru` both in normal and insert mode
-for triggering it easily.  You can disable these default mappings by setting
-`g:rubocop_no_mappings` in your `.vimrc` file, and then remap them differently.
+Additionally, the plugin registers `<Leader>ru` both in normal and insert mode
+for triggering it easily. You can disable these default mappings by setting
+`g:vimrubocop_keymap` in your `.vimrc` file, and then remap them differently.
 
-For instance, to trigger RuboCop by pressing `<leader>r` you can put the following in
+For instance, to trigger RuboCop by pressing `<Leader>r` you can put the following in
 your `.vimrc`:
 
 ```viml
-let g:rubocop_no_mappings = 'true'
-nmap <leader>r :RuboCop<CR>
+let g:vimrubocop_keymap = 0
+nmap <Leader>r :RuboCop<CR>
 ```

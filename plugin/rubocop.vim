@@ -35,6 +35,10 @@ if !exists('vimrubocop_extra_args')
   let vimrubocop_extra_args=''
 endif
 
+if !exists('g:vimrubocop_keymap')
+  let g:vimrubocop_keymap = 1
+endif
+
 function! s:RuboCop()
   let l:extra_args     = g:vimrubocop_extra_args
   let l:filename       = @%
@@ -63,7 +67,7 @@ endfunction
 command! RuboCop :call <SID>RuboCop()
 
 " Shortcuts for RuboCop
-if !exists("g:rubocop_no_mappings")
+if g:vimrubocop_keymap == 1
   nmap <Leader>ru :RuboCop<CR>
   imap <Leader>ru <ESC>:RuboCop<CR>
 endif
