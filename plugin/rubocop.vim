@@ -2,7 +2,7 @@
 "
 " Author:  ngmy
 " URL:     https://github.com/ngmy/vim-rubocop
-" Version: 0.2
+" Version: 0.3
 " ----------------------------------------------------------------------------
 
 if exists('g:loaded_vimrubocop') || &cp

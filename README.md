@@ -4,7 +4,7 @@ The **Vim RuboCop** plugin runs [RuboCop](https://github.com/bbatsov/rubocop) an
 
 ## Requirements
 
-- Please note that the current version of the Vim RuboCop plugin requires RuboCop 0.9.0 or later.
+- Please note that the current version of the Vim RuboCop plugin requires RuboCop 0.12.0 or later.
 
 ## Installation
 
@@ -16,8 +16,8 @@ The **Vim RuboCop** plugin runs [RuboCop](https://github.com/bbatsov/rubocop) an
 
 - To run with specified config file add this line to your `.vimrc` file:
 
-    ```
-    let vimrubocop_config='/path/to/rubocop.yml'
+    ```viml
+    let g:vimrubocop_config = '/path/to/rubocop.yml'
     ```
 
 ### Keyboard Shortcuts ###
