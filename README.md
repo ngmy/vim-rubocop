@@ -35,7 +35,7 @@ In the quickfix window, you can use:
     gv   to open in vertical split silently
     q    to close the quickfix window
 
-Additionally, the plugin registers `<Leader>ru` both in normal and insert mode
+Additionally, the plugin registers `<Leader>ru` in normal mode
 for triggering it easily. You can disable these default mappings by setting
 `g:vimrubocop_keymap` in your `.vimrc` file, and then remap them differently.
 

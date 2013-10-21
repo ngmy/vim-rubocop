@@ -69,5 +69,4 @@ command! RuboCop :call <SID>RuboCop()
 " Shortcuts for RuboCop
 if g:vimrubocop_keymap == 1
   nmap <Leader>ru :RuboCop<CR>
-  imap <Leader>ru <ESC>:RuboCop<CR>
 endif
