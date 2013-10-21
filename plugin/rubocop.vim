@@ -18,11 +18,13 @@ if !exists('g:vimrubocop_rubocop_cmd')
   if executable('rubocop')
     let g:vimrubocop_rubocop_cmd = 'rubocop '
   else
-    " Unable to find the RuboCop executable
-    echomsg 'Unable to find rubocop in the current PATH.'
-    echomsg 'Plugin not loaded.'
-    let &cpo = s:save_cpo
-    finish
+    if !exists('g:vimrubocop_ignore_warning')
+      " Unable to find the RuboCop executable
+      echomsg 'Unable to find rubocop in the current PATH.'
+      echomsg 'Plugin not loaded.'
+      let &cpo = s:save_cpo
+      finish
+    end
   endif
 endif
 

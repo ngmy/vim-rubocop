@@ -20,6 +20,14 @@ The **Vim RuboCop** plugin runs [RuboCop](https://github.com/bbatsov/rubocop) an
     let g:vimrubocop_config = '/path/to/rubocop.yml'
     ```
 
+## Warnings
+
+- To ignore warnings when rubocop is not found
+
+    ```viml
+    let g:vimrubocop_ignore_warning = 1
+    ```
+
 ### Keyboard Shortcuts ###
   Credit for Shortcuts: [Ack.vim](https://github.com/mileszs/ack.vim)
 
