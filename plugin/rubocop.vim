@@ -13,17 +13,8 @@ let g:loaded_vimrubocop = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
-" Test for RuboCop
 if !exists('g:vimrubocop_rubocop_cmd')
-  if executable('rubocop')
-    let g:vimrubocop_rubocop_cmd = 'rubocop '
-  else
-    " Unable to find the RuboCop executable
-    echomsg 'Unable to find rubocop in the current PATH.'
-    echomsg 'Plugin not loaded.'
-    let &cpo = s:save_cpo
-    finish
-  endif
+  let g:vimrubocop_rubocop_cmd = 'rubocop '
 endif
 
 " Options
@@ -70,3 +61,5 @@ command! RuboCop :call <SID>RuboCop()
 if g:vimrubocop_keymap == 1
   nmap <Leader>ru :RuboCop<CR>
 endif
+
+let &cpo = s:save_cpo
