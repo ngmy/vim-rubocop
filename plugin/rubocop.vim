@@ -38,7 +38,12 @@ function! s:RuboCop(current_args)
   if g:vimrubocop_config != ''
     let l:rubocop_opts = ' '.l:rubocop_opts.' --config '.g:vimrubocop_config
   endif
+
   let l:rubocop_output  = system(l:rubocop_cmd.l:rubocop_opts.' '.l:filename)
+  if !empty(matchstr(l:rubocop_opts, '--auto-correct\|-\<a\>'))
+    "Reload file if using auto correct
+    edit
+  endif
   let l:rubocop_output  = substitute(l:rubocop_output, '\\"', "'", 'g')
   let l:rubocop_results = split(l:rubocop_output, "\n")
   cexpr l:rubocop_results
