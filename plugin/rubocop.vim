@@ -30,11 +30,11 @@ if !exists('g:vimrubocop_keymap')
   let g:vimrubocop_keymap = 1
 endif
 
-function! s:RuboCop()
+function! s:RuboCop(current_args)
   let l:extra_args     = g:vimrubocop_extra_args
   let l:filename       = @%
   let l:rubocop_cmd    = g:vimrubocop_rubocop_cmd
-  let l:rubocop_opts   = ' '.l:extra_args.' --format emacs'
+  let l:rubocop_opts   = ' '.a:current_args.' '.l:extra_args.' --format emacs'
   if g:vimrubocop_config != ''
     let l:rubocop_opts = ' '.l:rubocop_opts.' --config '.g:vimrubocop_config
   endif
@@ -55,7 +55,7 @@ function! s:RuboCop()
   exec "nnoremap <silent> <buffer> gv <C-W><CR><C-W>H<C-W>b<C-W>J"
 endfunction
 
-command! RuboCop :call <SID>RuboCop()
+command! -nargs=? RuboCop :call <SID>RuboCop(<q-args>)
 
 " Shortcuts for RuboCop
 if g:vimrubocop_keymap == 1
