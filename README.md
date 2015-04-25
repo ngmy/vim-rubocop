@@ -4,24 +4,29 @@ The **Vim RuboCop** plugin runs [RuboCop](https://github.com/bbatsov/rubocop) an
 
 ## Requirements
 
-- Please note that the current version of the Vim RuboCop plugin requires RuboCop 0.12.0 or later.
+Please note that the current version of the Vim RuboCop plugin requires RuboCop 0.12.0 or later.
 
 ## Installation
 
-- Obtain a copy of this plugin and place `rubocop.vim` in your Vim plugin.
+Obtain a copy of this plugin and place `rubocop.vim` in your Vim plugin directory.
 
 ## Usage
 
-- You can use the `:RuboCop` command to run RuboCop and display the results.
+You can use the `:RuboCop` command to run RuboCop and display the results.
 
-- To run with specified config file add this line to your `.vimrc` file:
+You can also use the `:RuboCop` command together with options. For example, `:RuboCop -l`, `:RuboCop -a` and so on.
 
-    ```viml
-    let g:vimrubocop_config = '/path/to/rubocop.yml'
-    ```
+### Configuration File
 
-### Keyboard Shortcuts ###
-  Credit for Shortcuts: [Ack.vim](https://github.com/mileszs/ack.vim)
+To run with the specified configuration file, add the following line to your `.vimrc` file:
+
+```viml
+let g:vimrubocop_config = '/path/to/rubocop.yml'
+```
+
+### Keyboard Shortcuts
+
+Credit for Shortcuts: [Ack.vim](https://github.com/mileszs/ack.vim)
 
 In the quickfix window, you can use:
 
@@ -46,3 +51,7 @@ your `.vimrc`:
 let g:vimrubocop_keymap = 0
 nmap <Leader>r :RuboCop<CR>
 ```
+
+## License
+
+The Vim RuboCop plugin is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).

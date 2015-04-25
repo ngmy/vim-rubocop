@@ -1,8 +1,10 @@
 " The "Vim RuboCop" plugin runs RuboCop and displays the results in Vim.
 "
-" Author:  ngmy
-" URL:     https://github.com/ngmy/vim-rubocop
-" Version: 0.3
+" Author:    Yuta Nagamiya
+" URL:       https://github.com/ngmy/vim-rubocop
+" Version:   0.4
+" Copyright: Copyright (c) 2013 Yuta Nagamiya
+" License:   MIT
 " ----------------------------------------------------------------------------
 
 if exists('g:loaded_vimrubocop') || &cp
