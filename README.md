@@ -26,21 +26,7 @@ let g:vimrubocop_config = '/path/to/rubocop.yml'
 
 ### Keyboard Shortcuts
 
-Credit for Shortcuts: [Ack.vim](https://github.com/mileszs/ack.vim)
-
-In the quickfix window, you can use:
-
-    o    to open (same as enter)
-    go   to preview file (open but maintain focus on ack.vim results)
-    t    to open in new tab
-    T    to open in new tab silently
-    h    to open in horizontal split
-    H    to open in horizontal split silently
-    v    to open in vertical split
-    gv   to open in vertical split silently
-    q    to close the quickfix window
-
-Additionally, the plugin registers `<Leader>ru` in normal mode
+The plugin registers `<Leader>ru` in normal mode
 for triggering it easily. You can disable these default mappings by setting
 `g:vimrubocop_keymap` in your `.vimrc` file, and then remap them differently.
 
