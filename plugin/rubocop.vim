@@ -48,15 +48,16 @@ function! s:RuboCop(current_args)
   endif
 
   let l:rubocop_output  = system(l:rubocop_cmd.l:rubocop_opts.' '.l:filename)
-  if !empty(matchstr(l:rubocop_opts, '--auto-correct\|-\<a\>'))
-    "Reload file if using auto correct
-    edit
-  endif
+  let l:auto_corrected = !empty(matchstr(l:rubocop_opts, '--auto-correct\|-\<a\>'))
   let l:rubocop_output  = substitute(l:rubocop_output, '\\"', "'", 'g')
   let l:rubocop_results = split(l:rubocop_output, "\n")
-  if len(l:rubocop_results)
+  if len(l:rubocop_results) && !l:auto_corrected
     cexpr l:rubocop_results
     copen
+  elseif l:auto_corrected " Reload file if using auto correct
+    edit
+    redraw
+    echo 'RuboCop: Auto-corrected!'
   else
     echo 'RuboCop: No violations!'
   endif
