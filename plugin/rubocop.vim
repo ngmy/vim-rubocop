@@ -62,7 +62,7 @@ function! s:RuboCop(current_args)
     cexpr l:rubocop_results
     copen
   elseif l:auto_corrected " Reload file if using auto correct
-    edit
+    silent edit
     redraw
     echo 'RuboCop: Auto-corrected!'
   else
