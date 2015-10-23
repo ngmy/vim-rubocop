@@ -32,7 +32,7 @@ if !exists('g:vimrubocop_keymap')
   let g:vimrubocop_keymap = 1
 endif
 
-let s:rubocop_switches = ['-l', '--lint', '-R', '--rails', '-a', '--auto-correct']
+let s:rubocop_switches = ['-D', '--display-cop-names', '-l', '--lint', '-R', '--rails', '-a', '--auto-correct']
 
 function! s:RuboCopSwitches(...)
   return join(s:rubocop_switches, "\n")
