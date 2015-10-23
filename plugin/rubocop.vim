@@ -80,7 +80,10 @@ function! s:RuboCop(current_args)
   exec "nnoremap <silent> <buffer> gv <C-W><CR><C-W>H<C-W>b<C-W>J"
 endfunction
 
-command! -complete=custom,s:RuboCopSwitches -nargs=? RuboCop :call <SID>RuboCop(<q-args>)
+augroup RuboCop
+  autocmd!
+  autocmd FileType ruby command! -buffer -complete=custom,s:RuboCopSwitches -nargs=? RuboCop :call <SID>RuboCop(<q-args>)
+augroup END
 
 " Shortcuts for RuboCop
 if g:vimrubocop_keymap == 1
