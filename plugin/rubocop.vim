@@ -39,6 +39,13 @@ function! s:RuboCopSwitches(...)
 endfunction
 
 function! s:RuboCop(current_args)
+  if &modified
+    echohl WarningMsg
+    echo 'RuboCop: Buffer has unsaved changes'
+    echohl None
+    return
+  endif
+
   let l:extra_args     = g:vimrubocop_extra_args
   let l:filename       = @%
   let l:rubocop_cmd    = g:vimrubocop_rubocop_cmd
