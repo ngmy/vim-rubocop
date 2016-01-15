@@ -8,7 +8,13 @@ Please note that the current version of the Vim RuboCop plugin requires RuboCop 
 
 ## Installation
 
-Obtain a copy of this plugin and place `rubocop.vim` in your Vim plugin directory.
+If you don't have a preferred installation method, you might want to use
+[pathogen.vim](https://github.com/tpope/vim-pathogen), and then simply copy and paste:
+
+```bash 
+cd ~/.vim/bundle
+git clone git@github.com:ngmy/vim-rubocop.git 
+```
 
 ## Usage
 
