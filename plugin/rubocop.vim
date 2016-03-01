@@ -38,16 +38,15 @@ function! s:RuboCopSwitches(...)
   return join(s:rubocop_switches, "\n")
 endfunction
 
-function! s:RuboCop(current_args)
+function! s:RuboCopBase(filename_maybe, current_args)
   let l:extra_args     = g:vimrubocop_extra_args
-  let l:filename       = @%
   let l:rubocop_cmd    = g:vimrubocop_rubocop_cmd
   let l:rubocop_opts   = ' '.a:current_args.' '.l:extra_args.' --format emacs'
   if g:vimrubocop_config != ''
     let l:rubocop_opts = ' '.l:rubocop_opts.' --config '.g:vimrubocop_config
   endif
 
-  let l:rubocop_output  = system(l:rubocop_cmd.l:rubocop_opts.' '.l:filename)
+  let l:rubocop_output  = system(l:rubocop_cmd.l:rubocop_opts.' '.a:filename_maybe)
   if !empty(matchstr(l:rubocop_opts, '--auto-correct\|-\<a\>'))
     "Reload file if using auto correct
     edit
@@ -68,7 +67,16 @@ function! s:RuboCop(current_args)
   exec "nnoremap <silent> <buffer> gv <C-W><CR><C-W>H<C-W>b<C-W>J"
 endfunction
 
+function! s:RuboCop(current_args)
+  return s:RuboCopBase(@%, a:current_args)
+endfunction
+
+function! s:RuboCopAll(current_args)
+  return s:RuboCopBase('', a:current_args)
+endfunction
+
 command! -complete=custom,s:RuboCopSwitches -nargs=? RuboCop :call <SID>RuboCop(<q-args>)
+command! -complete=custom,s:RuboCopSwitches -nargs=? RuboCopAll :call <SID>RuboCopAll(<q-args>)
 
 " Shortcuts for RuboCop
 if g:vimrubocop_keymap == 1
