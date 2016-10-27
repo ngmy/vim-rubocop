@@ -42,9 +42,9 @@ function! s:RuboCop(current_args)
   let l:extra_args     = g:vimrubocop_extra_args
   let l:filename       = @%
   let l:rubocop_cmd    = g:vimrubocop_rubocop_cmd
-  let l:rubocop_opts   = ' '.a:current_args.' '.l:extra_args.' --format emacs'
+  let l:rubocop_opts   = ' --format emacs '.a:current_args.' '.l:extra_args
   if g:vimrubocop_config != ''
-    let l:rubocop_opts = ' '.l:rubocop_opts.' --config '.g:vimrubocop_config
+    let l:rubocop_opts = ' '.g:vimrubocop_config.' --config '.l:rubocop_opts
   endif
 
   let l:rubocop_output  = system(l:rubocop_cmd.l:rubocop_opts.' '.l:filename)
