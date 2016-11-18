@@ -60,7 +60,7 @@ function! s:RuboCop(current_args)
   let l:rubocop_results = split(l:rubocop_output, "\n")
   if len(l:rubocop_results) && !l:auto_corrected
     cexpr l:rubocop_results
-    copen
+    botright copen
     " Shortcuts taken from Ack.vim - git://github.com/mileszs/ack.vim.git
     exec "nnoremap <silent> <buffer> q :ccl<CR>"
     exec "nnoremap <silent> <buffer> t <C-W><CR><C-W>T"
