@@ -53,8 +53,11 @@ function! s:RuboCop(current_args)
     edit
   endif
   let l:rubocop_output  = substitute(l:rubocop_output, '\\"', "'", 'g')
-  set l:rubocop_output  = substitute(l:rubocop_output, "/*.*.rb", "".l:filename, 'g')
-  let l:rubocop_results = split(l:rubocop_output, "\n")
+  let l:rubocop_results = []
+  for line in split(l:rubocop_output, "\n")
+    let l:new_line = substitute(line, ".*\.rb", ''.l:filename, 'g')
+    call add(l:rubocop_results, l:new_line)
+  endfor
   cexpr l:rubocop_results
   copen
   " Shortcuts taken from Ack.vim - git://github.com/mileszs/ack.vim.git
