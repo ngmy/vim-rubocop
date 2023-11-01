@@ -29,7 +29,7 @@ if !exists('g:vimrubocop_extra_args')
 endif
 
 if !exists('g:vimrubocop_keymap')
-  let g:vimrubocop_keymap = 1
+  let g:vimrubocop_keymap = !exists('no_plugin_maps')
 endif
 
 let s:rubocop_switches = ['-l', '--lint', '-R', '--rails', '-a', '--auto-correct']
